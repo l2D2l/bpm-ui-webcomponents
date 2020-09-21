@@ -1,0 +1,25 @@
+ui-text {
+  @apply inline-block;
+  @apply leading-tight;
+}
+
+$sizes: 'xs', 'sm', 'base', 'lg', 'xl';
+@each $size in $sizes {
+  .text--size-#{$size} {
+    @apply text-#{$size};
+  }
+}
+
+$colors: 'gray-200', 'black', 'blue-900', 'white';
+@each $color in $colors {
+  .text--color-#{$color} {
+    @apply text-#{$color};
+  }
+}
+
+$weights: 'thin', 'normal', 'bold';
+@each $weight in $weights {
+  .text--weight-#{$weight} {
+    @apply font-#{$weight};
+  }
+}

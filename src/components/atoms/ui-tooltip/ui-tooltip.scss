@@ -1,0 +1,19 @@
+ui-tooltip {
+  @apply relative;
+  @apply inline-block;
+}
+
+ui-tooltip:hover > .tooltip {
+  @apply block;
+}
+
+.tooltip {
+  @apply hidden;
+  @apply w-40;
+  @apply bg-gray-800;
+  @apply text-white;
+  @apply rounded-md;
+  @apply p-3;
+  @apply absolute;
+  z-index: 10;
+}
