@@ -10,9 +10,20 @@
     <link rel="stylesheet" href="/build/bpm-ui-webcomponents.css" />
   </head>
   <body>
-    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <ui-text color="blue-900">
+      texto de color
+    </ui-text>
+    <ui-tooltip>
+        <ui-icon name="help"></ui-icon>
+        <ui-text slot="tooltip" color="white" size="xs">
+          Acá verás lo relacionado a la ayuda.
+        </ui-text>
+    </ui-tooltip>
+    <ui-icon name="cheveron-right"></ui-icon>
+    <ui-input type="password" placeholder="Ingresar contraseña"></ui-input> <!-- formControlName="password" -->
+    <ui-input type="text" placeholder="Ingresar código de usuario" ></ui-input> <!-- formControlName="username" -->
 
     <ui-button>Iniciar Sesion</ui-button>
-
   </body>
 </html>

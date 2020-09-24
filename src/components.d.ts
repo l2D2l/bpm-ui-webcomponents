@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconColor, IconName, IconSize } from "@global/types/icon.type";
+import { InputType } from "@global/types/input.type";
 import { TextColor, TextSize, TextWeight } from "@global/types/text.type";
 export namespace Components {
     interface UiButton {
@@ -19,6 +20,10 @@ export namespace Components {
         "color": IconColor;
         "name": IconName;
         "size": IconSize;
+    }
+    interface UiInput {
+        "placeholder": string;
+        "type": InputType;
     }
     interface UiSidebarHeader {
     }
@@ -52,6 +57,12 @@ declare global {
     var HTMLUiIconElement: {
         prototype: HTMLUiIconElement;
         new (): HTMLUiIconElement;
+    };
+    interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
+    }
+    var HTMLUiInputElement: {
+        prototype: HTMLUiInputElement;
+        new (): HTMLUiInputElement;
     };
     interface HTMLUiSidebarHeaderElement extends Components.UiSidebarHeader, HTMLStencilElement {
     }
@@ -87,6 +98,7 @@ declare global {
         "ui-button": HTMLUiButtonElement;
         "ui-dropdown": HTMLUiDropdownElement;
         "ui-icon": HTMLUiIconElement;
+        "ui-input": HTMLUiInputElement;
         "ui-sidebar-header": HTMLUiSidebarHeaderElement;
         "ui-testeo": HTMLUiTesteoElement;
         "ui-text": HTMLUiTextElement;
@@ -108,6 +120,10 @@ declare namespace LocalJSX {
         "name"?: IconName;
         "size"?: IconSize;
     }
+    interface UiInput {
+        "placeholder"?: string;
+        "type"?: InputType;
+    }
     interface UiSidebarHeader {
     }
     interface UiTesteo {
@@ -125,6 +141,7 @@ declare namespace LocalJSX {
         "ui-button": UiButton;
         "ui-dropdown": UiDropdown;
         "ui-icon": UiIcon;
+        "ui-input": UiInput;
         "ui-sidebar-header": UiSidebarHeader;
         "ui-testeo": UiTesteo;
         "ui-text": UiText;
@@ -139,6 +156,7 @@ declare module "@stencil/core" {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-dropdown": LocalJSX.UiDropdown & JSXBase.HTMLAttributes<HTMLUiDropdownElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
+            "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
             "ui-sidebar-header": LocalJSX.UiSidebarHeader & JSXBase.HTMLAttributes<HTMLUiSidebarHeaderElement>;
             "ui-testeo": LocalJSX.UiTesteo & JSXBase.HTMLAttributes<HTMLUiTesteoElement>;
             "ui-text": LocalJSX.UiText & JSXBase.HTMLAttributes<HTMLUiTextElement>;
