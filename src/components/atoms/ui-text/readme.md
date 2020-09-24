@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                             | Default      |
-| -------- | --------- | ----------- | ------------------------------------------------ | ------------ |
-| `color`  | `color`   |             | `"black" \| "blue-900" \| "gray-200" \| "white"` | `'blue-900'` |
-| `size`   | `size`    |             | `"base" \| "lg" \| "sm" \| "xl" \| "xs"`         | `'base'`     |
-| `weight` | `weight`  |             | `"bold" \| "normal" \| "thin"`                   | `'normal'`   |
+| Property | Attribute | Description | Type                                             | Default    |
+| -------- | --------- | ----------- | ------------------------------------------------ | ---------- |
+| `color`  | `color`   |             | `"black" \| "blue-900" \| "gray-200" \| "white"` | `'black'`  |
+| `size`   | `size`    |             | `"base" \| "lg" \| "sm" \| "xl" \| "xs"`         | `'base'`   |
+| `weight` | `weight`  |             | `"bold" \| "normal" \| "thin"`                   | `'normal'` |
 
 
 ## Dependencies

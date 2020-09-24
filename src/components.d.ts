@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconColor, IconName, IconSize } from "@global/types/icon.type";
 import { TextColor, TextSize, TextWeight } from "@global/types/text.type";
 export namespace Components {
+    interface UiButton {
+    }
     interface UiDropdown {
         "items": { label: string; value: string }[];
         "placeholder": string;
@@ -33,6 +35,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
+    }
+    var HTMLUiButtonElement: {
+        prototype: HTMLUiButtonElement;
+        new (): HTMLUiButtonElement;
+    };
     interface HTMLUiDropdownElement extends Components.UiDropdown, HTMLStencilElement {
     }
     var HTMLUiDropdownElement: {
@@ -76,6 +84,7 @@ declare global {
         new (): HTMLUiTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "ui-button": HTMLUiButtonElement;
         "ui-dropdown": HTMLUiDropdownElement;
         "ui-icon": HTMLUiIconElement;
         "ui-sidebar-header": HTMLUiSidebarHeaderElement;
@@ -86,6 +95,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface UiButton {
+    }
     interface UiDropdown {
         "items"?: { label: string; value: string }[];
         "onValueChange"?: (event: CustomEvent<any>) => void;
@@ -111,6 +122,7 @@ declare namespace LocalJSX {
     interface UiTooltip {
     }
     interface IntrinsicElements {
+        "ui-button": UiButton;
         "ui-dropdown": UiDropdown;
         "ui-icon": UiIcon;
         "ui-sidebar-header": UiSidebarHeader;
@@ -124,6 +136,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-dropdown": LocalJSX.UiDropdown & JSXBase.HTMLAttributes<HTMLUiDropdownElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-sidebar-header": LocalJSX.UiSidebarHeader & JSXBase.HTMLAttributes<HTMLUiSidebarHeaderElement>;

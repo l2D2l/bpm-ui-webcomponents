@@ -3,6 +3,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint', 'jest', 'simple-import-sort'],
     parserOptions: {
+        ecmaVersion: 6,
         ecmaFeatures: {
             jsx: true,
         },
@@ -20,6 +21,15 @@ module.exports = {
         'plugin:@stencil/recommended',
     ],
     rules: {
+        "at-rule-no-unknown": [ true, {
+            "ignoreAtRules": [
+              "extends",
+              "tailwind"
+            ]
+          }],
+          "block-no-empty": null,
+          "unit-whitelist": ["em", "rem", "s"]
+        },
         // jest
         'jest/no-disabled-tests': 'warn',
         'jest/no-focused-tests': 'error',
