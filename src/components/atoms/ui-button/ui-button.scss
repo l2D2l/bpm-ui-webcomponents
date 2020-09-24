@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.button {
+  border: none;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin: 0px 0px;
+  font-size: 16px;
+  @apply bg-yellow-500 px-6 py-4 font-prelo font-semibold rounded-md;
+}

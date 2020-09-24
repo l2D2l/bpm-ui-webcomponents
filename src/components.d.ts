@@ -5,11 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { InputType } from "./global/types/input.type";
 import { IconColor, IconName, IconSize } from "@global/types/icon.type";
-import { InputType } from "@global/types/input.type";
+import { InputType as InputType1 } from "@global/types/input.type";
 import { TextColor, TextSize, TextWeight } from "@global/types/text.type";
 export namespace Components {
     interface UiButton {
+        "type": InputType;
     }
     interface UiDropdown {
         "items": { label: string; value: string }[];
@@ -108,6 +110,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface UiButton {
+        "type"?: InputType;
     }
     interface UiDropdown {
         "items"?: { label: string; value: string }[];
