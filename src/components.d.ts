@@ -7,7 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { InputType } from "./global/types/input.type";
 import { IconColor, IconName, IconSize } from "@global/types/icon.type";
-import { InputType as InputType1 } from "@global/types/input.type";
 import { TextColor, TextSize, TextWeight } from "@global/types/text.type";
 export namespace Components {
     interface UiButton {
@@ -24,8 +23,8 @@ export namespace Components {
         "size": IconSize;
     }
     interface UiInput {
-        "placeholder": string;
-        "type": InputType;
+        "type": any;
+        "value"?: string | number | null;
     }
     interface UiSidebarHeader {
     }
@@ -124,8 +123,9 @@ declare namespace LocalJSX {
         "size"?: IconSize;
     }
     interface UiInput {
-        "placeholder"?: string;
-        "type"?: InputType;
+        "onUiChange"?: (event: CustomEvent<any>) => void;
+        "type"?: any;
+        "value"?: string | number | null;
     }
     interface UiSidebarHeader {
     }

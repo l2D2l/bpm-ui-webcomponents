@@ -1,30 +1,39 @@
-import { InputType } from '@global/types/input.type';
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 
 @Component({
   tag: 'ui-input',
   styleUrl: 'ui-input.scss',
-  shadow: true,
+  scoped: true
 })
 export class UiInput {
 
-  @Prop() readonly type:InputType = 'text';
-  @Prop() readonly placeholder: string;
+  @Prop({ mutable: true }) value?: string | number | null = '';
+
+  @Prop() type: any = 'text';
+
+  @Event() uiChange!: EventEmitter<any>; // se escuchara desde el proyecto Angular
+
+  private onInput = (ev: Event) => {
+    const input = ev.target as HTMLInputElement | null;
+    if (input) {
+      this.value = input.value || '';
+    }
+  }
+
+  @Watch('value')
+  protected valueChanged() {
+    this.uiChange.emit({ value: this.value == null ? this.value : this.value.toString() });
+  }
 
   render() {
     return (
       <Host>
-        <input 
-            class="input"
-            autocapitalize="off"
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
-            type={this.type}
-            placeholder={this.placeholder}
+        <input
+          class="input"
+          type={this.type}
+          onInput={this.onInput}
         />
       </Host>
     );
   }
-
 }
