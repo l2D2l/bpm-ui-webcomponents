@@ -11,6 +11,7 @@ export class UiButton {
   @Element() el!: HTMLElement;
 
   @Prop() readonly type:InputType = 'button';
+  @Prop({ reflect: true }) disabled = false;
 
   private handleClick = (ev: Event) => {
       const form = this.el.closest('form');
@@ -28,8 +29,8 @@ export class UiButton {
 
   render() {
     return (
-      <Host onClick={this.handleClick} >
-        <button class="button">
+      <Host  >
+        <button class="button" disabled={this.disabled} onClick={this.handleClick}>
           <slot></slot>
         </button>
       </Host>

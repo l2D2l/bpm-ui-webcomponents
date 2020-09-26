@@ -10,6 +10,7 @@ import { IconColor, IconName, IconSize } from "@global/types/icon.type";
 import { TextColor, TextSize, TextWeight } from "@global/types/text.type";
 export namespace Components {
     interface UiButton {
+        "disabled": boolean;
         "type": InputType;
     }
     interface UiDropdown {
@@ -23,6 +24,7 @@ export namespace Components {
         "size": IconSize;
     }
     interface UiInput {
+        "placeholder"?: string | null;
         "type": any;
         "value"?: string | number | null;
     }
@@ -109,6 +111,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface UiButton {
+        "disabled"?: boolean;
         "type"?: InputType;
     }
     interface UiDropdown {
@@ -124,6 +127,7 @@ declare namespace LocalJSX {
     }
     interface UiInput {
         "onUiChange"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string | null;
         "type"?: any;
         "value"?: string | number | null;
     }

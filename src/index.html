@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/bpm-ui-webcomponents.esm.js"></script>
-    <script nomodule src="/build/bpm-ui-webcoponents.js"></script>
-    <link rel="stylesheet" href="/build/bpm-ui-webcomponents.css" />
-  </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/bpm-ui-webcomponents.esm.js"></script>
+  <script nomodule src="/build/bpm-ui-webcoponents.js"></script>
+  <link rel="stylesheet" href="/build/bpm-ui-webcomponents.css" />
+</head>
+
+<body>
+  <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
     <ui-text color="blue-900">
       texto de color
     </ui-text>
@@ -21,9 +23,17 @@
         </ui-text>
     </ui-tooltip>
     <ui-icon name="cheveron-right"></ui-icon>
-    <ui-input type="password" placeholder="Ingresar contraseña"></ui-input> <!-- formControlName="password" -->
-    <ui-input type="text" placeholder="Ingresar código de usuario" ></ui-input> <!-- formControlName="username" -->
+    <ui-input type="password" placeholder="Ingresar contraseña"></ui-input>
+    <ui-input type="text" placeholder="Ingresar código de usuario" ></ui-input>  -->
 
+  <div class="p-5">
+
+    <ui-input type="text" placeholder="Ingresar código de usuario" name="username"></ui-input>
+    <br>
     <ui-button>Iniciar Sesion</ui-button>
-  </body>
+
+  </div>
+
+</body>
+
 </html>

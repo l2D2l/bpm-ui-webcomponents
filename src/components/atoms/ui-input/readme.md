@@ -7,10 +7,17 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                   | Default     |
-| ------------- | ------------- | ----------- | ---------------------- | ----------- |
-| `placeholder` | `placeholder` |             | `string`               | `undefined` |
-| `type`        | `type`        |             | `"password" \| "text"` | `'text'`    |
+| Property | Attribute | Description | Type               | Default  |
+| -------- | --------- | ----------- | ------------------ | -------- |
+| `type`   | `type`    |             | `any`              | `'text'` |
+| `value`  | `value`   |             | `number \| string` | `''`     |
+
+
+## Events
+
+| Event      | Description | Type               |
+| ---------- | ----------- | ------------------ |
+| `uiChange` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------
