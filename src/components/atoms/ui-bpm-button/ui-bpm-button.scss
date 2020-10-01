@@ -1,0 +1,206 @@
+ui-bpm-button {
+  @apply block;
+
+  & button {
+    @apply font-button;
+    @apply font-semibold;
+    @apply rounded;
+    @apply cursor-pointer;
+    margin: 2px;
+
+    &.button--disabled {
+      @apply bg-dark-gray-500;
+      @apply opacity-50;
+      @apply cursor-not-allowed;
+    }
+
+    &:focus {
+      @apply outline-none;
+    }
+
+    &.button--loading {
+      @apply pointer-events-none;
+    }
+  }
+}
+
+.button__type {
+  &--primary {
+    @apply bg-yellow-500;
+    @apply text-blue-500;
+
+    ui-bpm-icon {
+      @apply bg-yellow-200;
+      @apply rounded-full;
+      fill: theme('colors.blue.500');
+    }
+
+    &:hover {
+      @apply bg-yellow-700;
+    }
+
+    &:focus {
+      @apply m-0;
+      @apply border-2;
+      @apply border-solid;
+      @apply bg-yellow-500;
+      @apply border-strong-blue-200;
+    }
+
+    &:active {
+      @apply bg-yellow-900;
+    }
+
+    &.button--disabled {
+      @apply bg-yellow-200;
+      @apply text-blue-200;
+    }
+  }
+
+  &--secondary {
+    @apply bg-dark-grayish-blue-200;
+    @apply text-blue-500;
+    @apply relative;
+    box-shadow: inset 0px 0px 0px 1px theme('colors.blue.100');
+
+    ui-bpm-icon {
+      @apply bg-blue-100;
+      @apply rounded-full;
+      fill: theme('colors.blue.500');
+    }
+
+    &:hover {
+      @apply bg-dark-grayish-blue-500;
+    }
+
+    &:focus {
+      @apply m-0;
+      @apply bg-dark-grayish-blue-200;
+      @apply border-strong-blue-200;
+      @apply border-2;
+      @apply shadow-none;
+    }
+
+    &:active {
+      @apply bg-dark-grayish-blue-700;
+    }
+
+    &.button--disabled {
+      @apply bg-dark-grayish-blue-200;
+      @apply text-blue-200;
+    }
+  }
+
+  &--tertiary {
+    @apply text-blue-500;
+    @apply relative;
+    box-shadow: inset 0px 0px 0px 1px theme('colors.blue.500');
+
+    ui-bpm-icon {
+      @apply bg-blue-100;
+      @apply rounded-full;
+      fill: theme('colors.blue.500');
+    }
+  }
+
+  &--text {
+    @apply text-blue-500;
+    @apply relative;
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    margin: 0px;
+    ui-bpm-icon {
+      @apply bg-blue-100;
+      @apply rounded-full;
+      fill: theme('colors.blue.500');
+    }
+  }
+
+  &--complementary {
+    @apply bg-blue-500;
+    @apply text-white;
+
+    ui-bpm-icon {
+      @apply bg-blue-300;
+      @apply rounded-full;
+      fill: white;
+    }
+
+    &:hover {
+      @apply bg-blue-700;
+    }
+
+    &:active {
+      @apply bg-blue-900;
+    }
+
+    &.button--disabled {
+      @apply bg-blue-200;
+      @apply text-white;
+    }
+  }
+}
+
+$widths: 'auto', 'full';
+@each $width in $widths {
+  .button__width--#{$width} {
+    @apply w-#{$width};
+  }
+}
+
+$py_sm_loading: 8px;
+$py_md_loading: 11px;
+$py_lg_loading: 16px;
+$py_xl_loading: 20px;
+
+.button__size--sm {
+  padding: 11px 24px;
+  font-size: 12px;
+  line-height: 0.85;
+  &.button--loading,
+  &.button__icon {
+    padding-top: $py_sm_loading;
+    padding-bottom: $py_sm_loading;
+  }
+}
+
+.button__size--md {
+  padding: 13px 24px;
+  font-size: 14px;
+  line-height: 0.86;
+  &.button--loading,
+  &.button__icon {
+    padding-top: $py_md_loading;
+    padding-bottom: $py_md_loading;
+  }
+}
+
+.button__size--lg {
+  padding: 17px 24px;
+  font-size: 14px;
+  line-height: 1;
+  &.button--loading,
+  &.button__icon {
+    padding-top: $py_lg_loading;
+    padding-bottom: $py_lg_loading;
+  }
+}
+
+.button__size--xl {
+  padding: 22px 24px;
+  font-size: 14px;
+  line-height: 0.9;
+  &.button--loading,
+  &.button__icon {
+    padding-top: $py_xl_loading;
+    padding-bottom: $py_xl_loading;
+  }
+}
+
+.button__content {
+  @apply .flex .items-center;
+
+  & > *:last-child {
+    margin-left: 8px;
+  }
+}

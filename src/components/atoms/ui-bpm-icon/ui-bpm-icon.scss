@@ -1,0 +1,16 @@
+ui-bpm-icon {
+  @apply inline-flex;
+  & > svg {
+    @apply inline-block;
+    @apply align-middle;
+  }
+}
+
+.icon__type {
+  &--active {
+    @apply fill-current;
+    @apply text-yellow-700;
+    @apply stroke-1;
+    @apply stroke-current;
+  }
+}

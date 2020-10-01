@@ -1,9 +1,32 @@
 export type IconName =
-  | 'help'
-  | 'cog'
-  | 'cheveron-right'
-  | 'cheveron-left'
-  | 'cheveron-up'
-  | 'cheveron-down';
-export type IconColor = 'gray-200' | 'black' | 'white';
-export type IconSize = 'xs' | 'sm' | 'md';
+  | 'none'
+  | 'star'
+  | 'star_filled'
+  | 'loader'
+  | 'credit_card'
+  | 'currency'
+  | 'check'
+  | 'arrows'
+  | 'fingerprint'
+  | 'findpage'
+  | 'visibility'
+  | 'download'
+  | 'trendingup'
+  | 'mail'
+  | 'arrow_down'
+  | 'arrow_up'
+  | 'arrow_back'
+  | 'arrow_next'
+  | 'cheveron_down'
+  | 'cheveron_up'
+  | 'cheveron_back'
+  | 'cheveron_next'
+  | 'arrow_direct_down'
+  | 'arrow_direct_up'
+  | 'arrow_direct_back'
+  | 'arrow_direct_next'
+  | 'page_loader'
+  | 'default';
+
+export type IconType = 'base' | 'active' | 'bordered';
+export type IconViewBox = '0 0 14 14' | '0 0 16 16' | '0 0 24 24';

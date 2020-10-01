@@ -5,170 +5,122 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { InputType } from "./global/types/input.type";
-import { IconColor, IconName, IconSize } from "@global/types/icon.type";
-import { TextColor, TextSize, TextWeight } from "@global/types/text.type";
+import { ButtonSize, ButtonType, ButtonWidth, IconPosition } from "@global/types/button.type";
+import { IconName, IconType } from "@global/types/icon.type";
+import { TextAlign, TextColor, TextSize, TextWeight } from "@global/types/text.type";
 export namespace Components {
-    interface UiButton {
+    interface UiBpmButton {
+        "behavior": string;
         "disabled": boolean;
-        "type": InputType;
+        "iconName": IconName;
+        "iconPosition": IconPosition;
+        "iconSize": "sm";
+        "isLoading": false;
+        "label": string;
+        "size": ButtonSize;
+        "type": ButtonType;
+        "width": ButtonWidth;
     }
-    interface UiDropdown {
-        "items": { label: string; value: string }[];
-        "placeholder": string;
-        "value": string;
-    }
-    interface UiIcon {
-        "color": IconColor;
+    interface UiBpmIcon {
+        "color": string;
+        "height": string;
+        "iconId": "id";
         "name": IconName;
-        "size": IconSize;
+        "type": IconType;
+        "value": string;
+        "width": string;
     }
-    interface UiInput {
-        "placeholder"?: string | null;
-        "type": any;
-        "value"?: string | number | null;
+    interface UiBpmInput {
     }
-    interface UiSidebarHeader {
-    }
-    interface UiTesteo {
-    }
-    interface UiText {
+    interface UiBpmText {
+        "align": TextAlign;
         "color": TextColor;
         "size": TextSize;
+        "underLine": boolean;
+        "value": string;
         "weight": TextWeight;
-    }
-    interface UiTitle {
-    }
-    interface UiTooltip {
     }
 }
 declare global {
-    interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
+    interface HTMLUiBpmButtonElement extends Components.UiBpmButton, HTMLStencilElement {
     }
-    var HTMLUiButtonElement: {
-        prototype: HTMLUiButtonElement;
-        new (): HTMLUiButtonElement;
+    var HTMLUiBpmButtonElement: {
+        prototype: HTMLUiBpmButtonElement;
+        new (): HTMLUiBpmButtonElement;
     };
-    interface HTMLUiDropdownElement extends Components.UiDropdown, HTMLStencilElement {
+    interface HTMLUiBpmIconElement extends Components.UiBpmIcon, HTMLStencilElement {
     }
-    var HTMLUiDropdownElement: {
-        prototype: HTMLUiDropdownElement;
-        new (): HTMLUiDropdownElement;
+    var HTMLUiBpmIconElement: {
+        prototype: HTMLUiBpmIconElement;
+        new (): HTMLUiBpmIconElement;
     };
-    interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {
+    interface HTMLUiBpmInputElement extends Components.UiBpmInput, HTMLStencilElement {
     }
-    var HTMLUiIconElement: {
-        prototype: HTMLUiIconElement;
-        new (): HTMLUiIconElement;
+    var HTMLUiBpmInputElement: {
+        prototype: HTMLUiBpmInputElement;
+        new (): HTMLUiBpmInputElement;
     };
-    interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
+    interface HTMLUiBpmTextElement extends Components.UiBpmText, HTMLStencilElement {
     }
-    var HTMLUiInputElement: {
-        prototype: HTMLUiInputElement;
-        new (): HTMLUiInputElement;
-    };
-    interface HTMLUiSidebarHeaderElement extends Components.UiSidebarHeader, HTMLStencilElement {
-    }
-    var HTMLUiSidebarHeaderElement: {
-        prototype: HTMLUiSidebarHeaderElement;
-        new (): HTMLUiSidebarHeaderElement;
-    };
-    interface HTMLUiTesteoElement extends Components.UiTesteo, HTMLStencilElement {
-    }
-    var HTMLUiTesteoElement: {
-        prototype: HTMLUiTesteoElement;
-        new (): HTMLUiTesteoElement;
-    };
-    interface HTMLUiTextElement extends Components.UiText, HTMLStencilElement {
-    }
-    var HTMLUiTextElement: {
-        prototype: HTMLUiTextElement;
-        new (): HTMLUiTextElement;
-    };
-    interface HTMLUiTitleElement extends Components.UiTitle, HTMLStencilElement {
-    }
-    var HTMLUiTitleElement: {
-        prototype: HTMLUiTitleElement;
-        new (): HTMLUiTitleElement;
-    };
-    interface HTMLUiTooltipElement extends Components.UiTooltip, HTMLStencilElement {
-    }
-    var HTMLUiTooltipElement: {
-        prototype: HTMLUiTooltipElement;
-        new (): HTMLUiTooltipElement;
+    var HTMLUiBpmTextElement: {
+        prototype: HTMLUiBpmTextElement;
+        new (): HTMLUiBpmTextElement;
     };
     interface HTMLElementTagNameMap {
-        "ui-button": HTMLUiButtonElement;
-        "ui-dropdown": HTMLUiDropdownElement;
-        "ui-icon": HTMLUiIconElement;
-        "ui-input": HTMLUiInputElement;
-        "ui-sidebar-header": HTMLUiSidebarHeaderElement;
-        "ui-testeo": HTMLUiTesteoElement;
-        "ui-text": HTMLUiTextElement;
-        "ui-title": HTMLUiTitleElement;
-        "ui-tooltip": HTMLUiTooltipElement;
+        "ui-bpm-button": HTMLUiBpmButtonElement;
+        "ui-bpm-icon": HTMLUiBpmIconElement;
+        "ui-bpm-input": HTMLUiBpmInputElement;
+        "ui-bpm-text": HTMLUiBpmTextElement;
     }
 }
 declare namespace LocalJSX {
-    interface UiButton {
+    interface UiBpmButton {
+        "behavior"?: string;
         "disabled"?: boolean;
-        "type"?: InputType;
+        "iconName"?: IconName;
+        "iconPosition"?: IconPosition;
+        "iconSize"?: "sm";
+        "isLoading"?: false;
+        "label"?: string;
+        "onClicked"?: (event: CustomEvent<any>) => void;
+        "size"?: ButtonSize;
+        "type"?: ButtonType;
+        "width"?: ButtonWidth;
     }
-    interface UiDropdown {
-        "items"?: { label: string; value: string }[];
-        "onValueChange"?: (event: CustomEvent<any>) => void;
-        "placeholder"?: string;
-        "value"?: string;
-    }
-    interface UiIcon {
-        "color"?: IconColor;
+    interface UiBpmIcon {
+        "color"?: string;
+        "height"?: string;
+        "iconId"?: "id";
         "name"?: IconName;
-        "size"?: IconSize;
+        "type"?: IconType;
+        "value"?: string;
+        "width"?: string;
     }
-    interface UiInput {
-        "onUiChange"?: (event: CustomEvent<any>) => void;
-        "placeholder"?: string | null;
-        "type"?: any;
-        "value"?: string | number | null;
+    interface UiBpmInput {
     }
-    interface UiSidebarHeader {
-    }
-    interface UiTesteo {
-    }
-    interface UiText {
+    interface UiBpmText {
+        "align"?: TextAlign;
         "color"?: TextColor;
         "size"?: TextSize;
+        "underLine"?: boolean;
+        "value"?: string;
         "weight"?: TextWeight;
     }
-    interface UiTitle {
-    }
-    interface UiTooltip {
-    }
     interface IntrinsicElements {
-        "ui-button": UiButton;
-        "ui-dropdown": UiDropdown;
-        "ui-icon": UiIcon;
-        "ui-input": UiInput;
-        "ui-sidebar-header": UiSidebarHeader;
-        "ui-testeo": UiTesteo;
-        "ui-text": UiText;
-        "ui-title": UiTitle;
-        "ui-tooltip": UiTooltip;
+        "ui-bpm-button": UiBpmButton;
+        "ui-bpm-icon": UiBpmIcon;
+        "ui-bpm-input": UiBpmInput;
+        "ui-bpm-text": UiBpmText;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
-            "ui-dropdown": LocalJSX.UiDropdown & JSXBase.HTMLAttributes<HTMLUiDropdownElement>;
-            "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
-            "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
-            "ui-sidebar-header": LocalJSX.UiSidebarHeader & JSXBase.HTMLAttributes<HTMLUiSidebarHeaderElement>;
-            "ui-testeo": LocalJSX.UiTesteo & JSXBase.HTMLAttributes<HTMLUiTesteoElement>;
-            "ui-text": LocalJSX.UiText & JSXBase.HTMLAttributes<HTMLUiTextElement>;
-            "ui-title": LocalJSX.UiTitle & JSXBase.HTMLAttributes<HTMLUiTitleElement>;
-            "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
+            "ui-bpm-button": LocalJSX.UiBpmButton & JSXBase.HTMLAttributes<HTMLUiBpmButtonElement>;
+            "ui-bpm-icon": LocalJSX.UiBpmIcon & JSXBase.HTMLAttributes<HTMLUiBpmIconElement>;
+            "ui-bpm-input": LocalJSX.UiBpmInput & JSXBase.HTMLAttributes<HTMLUiBpmInputElement>;
+            "ui-bpm-text": LocalJSX.UiBpmText & JSXBase.HTMLAttributes<HTMLUiBpmTextElement>;
         }
     }
 }
